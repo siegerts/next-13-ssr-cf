@@ -1,6 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
+  res.setHeader("Cache-Control", "s-maxage=0");
+  res.setHeader("Content-Type", "application/json");
+
+  console.log(req.method);
+
   if (req.method === "POST") {
     res.status(200).json({ status: "ok", ...req.body });
   } else if (req.method === "GET") {
