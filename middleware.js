@@ -8,7 +8,7 @@ export default function middleware(req, res) {
     // mapping of CloudFront-Viewer-Country to language code
     const countryCode = req.headers["cloudfront-viewer-country"];
 
-    console(req.headers["cloudfront-viewer-country"]);
+    console.log(req.headers["cloudfront-viewer-country"]);
 
     console.log("country code: ", countryCode);
 
