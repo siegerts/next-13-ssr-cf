@@ -4,11 +4,14 @@ export default function middleware(req, res) {
   const url = req.nextUrl.clone();
   console.log(req.method);
   console.log("HEADERS -- MIDDLEWARE");
-  console.log(req.headers);
+  // console.log(req.headers);
 
   if (url.pathname === "/") {
     // mapping of CloudFront-Viewer-Country to language code
     const countryCode = req.headers["cloudfront-viewer-country"];
+
+    console(req.headers["cloudfront-viewer-country"]);
+
     console.log("country code: ", countryCode);
 
     const countryToLanguage = {
