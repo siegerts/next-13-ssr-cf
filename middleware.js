@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
 
-export default async function middleware(req, res) {
+export default function middleware(req, res) {
   const url = req.nextUrl.clone();
   console.log(req.method);
 
   if (url.pathname === "/") {
     // mapping of CloudFront-Viewer-Country to language code
-    const countryCode = await JSON.parse(req.headers)[
-      "cloudfront-viewer-country"
-    ];
+    const headers = JSON.parse(req.headers);
+    const countryCode = headers["cloudfront-viewer-country"];
 
     console.log("country code: ", countryCode);
 
