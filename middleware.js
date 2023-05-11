@@ -6,8 +6,13 @@ export default function middleware(req, res) {
 
   if (url.pathname === "/") {
     // mapping of CloudFront-Viewer-Country to language code
-    const headers = JSON.parse(req.headers);
-    const countryCode = headers["cloudfront-viewer-country"];
+    // const headers = JSON.parse(req.headers);
+
+    const headers = req.headers;
+
+    console.log(typeof headers);
+    const countryCode = headers.get("cloudfront-viewer-country");
+    // const countryCode = headers["cloudfront-viewer-country"];
 
     console.log("country code: ", countryCode);
 
