@@ -3,8 +3,6 @@ import { NextResponse } from "next/server";
 export default function middleware(req, res) {
   const url = req.nextUrl.clone();
   console.log(req.method);
-  console.log("HEADERS -- MIDDLEWARE");
-  // console.log(req.headers);
 
   if (url.pathname === "/") {
     // mapping of CloudFront-Viewer-Country to language code
