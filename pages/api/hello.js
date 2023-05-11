@@ -5,6 +5,8 @@ export default function handler(req, res) {
   res.setHeader("Content-Type", "application/json");
 
   console.log(req.method);
+  console.log("HEADERS -- MIDDLEWARE");
+  console.log(req.headers);
 
   if (req.method === "POST") {
     res.status(200).json({ status: "ok", ...req.body });
