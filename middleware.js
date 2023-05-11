@@ -6,11 +6,9 @@ export default async function middleware(req, res) {
 
   if (url.pathname === "/") {
     // mapping of CloudFront-Viewer-Country to language code
-    const countryCode = await JSON.parse(
-      req.headers["cloudfront-viewer-country"]
-    );
-
-    console.log(await JSON.parse(req.headers["cloudfront-viewer-country"]));
+    const countryCode = await JSON.parse(req.headers)[
+      "cloudfront-viewer-country"
+    ];
 
     console.log("country code: ", countryCode);
 
