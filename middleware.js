@@ -11,6 +11,8 @@ export default function middleware(req, res) {
 
     console.log("country code: ", countryCode);
 
+    console.log("headers: ", headers);
+
     const countryToLanguage = {
       US: "en-US",
       GB: "en-GB",
